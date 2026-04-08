@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lê Lợi Robotics Challenge 2026</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="nav-logo">
+      <img src="logo_LRAS.png" alt="LRAS Logo" class="nav-logo-img" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#home">Trang Chủ</a></li>
+      <li><a href="#arena">Sân Đấu</a></li>
+      <li><a href="#rules">Luật Thi</a></li>
+      <li><a href="#simulation">Mô Phỏng</a></li>
+      <li><a href="#banned">Cấm Kỵ</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-bg">
+      <div class="grid-lines"></div>
+      <div class="scan-line"></div>
+    </div>
+    <div class="hero-content">
+      <div class="hero-logo-wrap">
+        <img src="challenge_logo.png" alt="Lê Lợi Robotics Challenge 2026" class="hero-logo" />
+      </div>
+      <p class="hero-subtitle">Đấu trường trí tuệ — Sáng tạo không giới hạn</p>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">2.44m</span><span class="stat-label">Sân đấu</span></div>
+        <div class="stat-divider">×</div>
+        <div class="stat"><span class="stat-num">180s</span><span class="stat-label">Mỗi trận</span></div>
+        <div class="stat-divider">×</div>
+        <div class="stat"><span class="stat-num">2kg</span><span class="stat-label">Robot tối đa</span></div>
+        <div class="stat-divider">×</div>
+        <div class="stat"><span class="stat-num">100</span><span class="stat-label">Điểm khởi đầu</span></div>
+      </div>
+      <a href="#simulation" class="cta-btn">
+        <span>Xem Mô Phỏng</span>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+    </div>
+    <div class="scroll-indicator">
+      <div class="scroll-dot"></div>
+      <span>Cuộn xuống</span>
+    </div>
+  </section>
+
+  <!-- ARENA OVERVIEW -->
+  <section id="arena" class="section arena-section">
+    <div class="section-header">
+      <span class="section-tag">ĐỀ BÀI THI ĐẤU</span>
+      <h2>Sân Đấu & Nhiệm Vụ</h2>
+    </div>
+    <div class="arena-grid">
+      <div class="arena-desc">
+        <div class="info-card">
+          <div class="info-icon">🏟️</div>
+          <h3>Đấu Trường</h3>
+          <p>Sàn đấu hình vuông <strong>2.44m × 2.44m</strong> với tường bao quanh chắc chắn. Hai robot bắt đầu từ hai vị trí xuất phát (màu xanh) đối diện nhau.</p>
+        </div>
+        <div class="info-card danger">
+          <div class="info-icon">⚠️</div>
+          <h3>Bẫy Nhỏ</h3>
+          <p>Hai vùng bẫy nhỏ (màu đỏ) đặt lệch tâm. Mỗi giây robot nằm trong bẫy → <strong>mất 1 điểm</strong>. Thoát ra thì điểm không bị trừ thêm.</p>
+        </div>
+        <div class="info-card critical">
+          <div class="info-icon">💥</div>
+          <h3>Cửa Sập</h3>
+          <p>Hai hố cửa sập ở hai bên sàn. Robot rơi vào → <strong>thua ngay lập tức</strong>, không cần tính điểm. Đây là yếu tố nguy hiểm nhất sân đấu.</p>
+        </div>
+        <div class="info-card">
+          <div class="info-icon">🎯</div>
+          <h3>Chiến Thuật</h3>
+          <p>Kết hợp tấn công để đẩy đối thủ vào bẫy/cửa sập, đồng thời phòng thủ tránh bị rơi vào vùng nguy hiểm. Mỗi quyết định đều mang tính sống còn.</p>
+        </div>
+      </div>
+      <div class="arena-map-static">
+        <div class="map-title">SƠ ĐỒ SÂN ĐẤU</div>
+        <div class="static-arena">
+          <div class="s-trap s-trap-top-left" data-label="Bẫy nhỏ"></div>
+          <div class="s-trapdoor s-td-left" data-label="Cửa sập"></div>
+          <div class="s-trapdoor s-td-right" data-label="Cửa sập"></div>
+          <div class="s-trap s-trap-bot-right" data-label="Bẫy nhỏ"></div>
+          <div class="s-start s-start-top" data-label="START"></div>
+          <div class="s-start s-start-bot" data-label="START"></div>
+          <div class="map-legend">
+            <div class="leg-item"><span class="leg-dot green"></span> Vị trí xuất phát</div>
+            <div class="leg-item"><span class="leg-dot red"></span> Bẫy (−1đ/s)</div>
+            <div class="leg-item"><span class="leg-dot dark-red"></span> Cửa sập (thua ngay)</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCORING RULES -->
+  <section id="rules" class="section rules-section">
+    <div class="section-header">
+      <span class="section-tag">LUẬT THI ĐẤU</span>
+      <h2>Cách Tính Điểm & Thắng Thua</h2>
+    </div>
+    <div class="rules-timeline">
+      <div class="rule-item">
+        <div class="rule-num">01</div>
+        <div class="rule-content">
+          <h3>Điểm Ban Đầu</h3>
+          <p>Mỗi đội bắt đầu với <strong>100 điểm</strong>. Điểm giảm dần nếu robot nằm trong bẫy.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">02</div>
+        <div class="rule-content">
+          <h3>Trừ Điểm Bẫy</h3>
+          <p>Robot trong vùng bẫy → <strong>−1 điểm/giây</strong>. Điểm ngừng trừ khi robot thoát ra.</p>
+        </div>
+      </div>
+      <div class="rule-item danger-rule">
+        <div class="rule-num">03</div>
+        <div class="rule-content">
+          <h3>Thua Trực Tiếp</h3>
+          <p>Robot rơi khỏi sàn hoặc vào cửa sập → <strong>thua ngay lập tức</strong>.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">04</div>
+        <div class="rule-content">
+          <h3>Sau 180 Giây</h3>
+          <p>So sánh điểm. Đội còn <strong>nhiều điểm hơn</strong> thắng trận.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">05</div>
+        <div class="rule-content">
+          <h3>Hòa Điểm → Hiệp Phụ</h3>
+          <p>Bắt đầu với <strong>50 điểm</strong>, thi đấu thêm <strong>60 giây</strong> để phân định thắng thua.</p>
+        </div>
+      </div>
+      <div class="rule-item">
+        <div class="rule-num">06</div>
+        <div class="rule-content">
+          <h3>Robot Mắc Kẹt</h3>
+          <p>Nếu dính nhau <strong>&gt;20 giây</strong>, trọng tài cảnh cáo. Sau 5 giây vẫn không tách → dừng trận, đặt về vị trí xuất phát.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="robot-specs">
+      <div class="section-header" style="margin-top:3rem">
+        <span class="section-tag">YÊU CẦU KỸ THUẬT</span>
+        <h2>Thông Số Robot</h2>
+      </div>
+      <div class="specs-grid">
+        <div class="spec-card">
+          <div class="spec-icon">📐</div>
+          <div class="spec-label">Kích Thước</div>
+          <div class="spec-value">30×30×30 cm</div>
+          <div class="spec-note">Khi bắt đầu trận đấu</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">⚖️</div>
+          <div class="spec-label">Khối Lượng</div>
+          <div class="spec-value">≤ 2.0 kg</div>
+          <div class="spec-note">Không giới hạn tối thiểu</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">⚡</div>
+          <div class="spec-label">Điện Áp</div>
+          <div class="spec-value">≤ 12.6 V</div>
+          <div class="spec-note">Pin/battery nội bộ</div>
+        </div>
+        <div class="spec-card">
+          <div class="spec-icon">📡</div>
+          <div class="spec-label">Điều Khiển</div>
+          <div class="spec-value">Không dây</div>
+          <div class="spec-note">Bluetooth / Wi-Fi / RF</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SIMULATION -->
+  <section id="simulation" class="section sim-section">
+    <div class="section-header">
+      <span class="section-tag">MÔ PHỎNG</span>
+      <h2>Giả Lập Trận Đấu</h2>
+      <p class="section-desc">Điều khiển robot xanh bằng WASD / mũi tên. Robot đỏ do AI điều khiển.</p>
+    </div>
+    <div class="sim-wrapper">
+      <div class="sim-hud">
+        <div class="hud-team blue-team">
+          <div class="team-label">ĐỘI XANH</div>
+          <div class="score-display" id="scoreBlue">100</div>
+          <div class="score-bar-wrap"><div class="score-bar blue-bar" id="barBlue"></div></div>
+          <div class="team-controls">WASD / ↑↓←→</div>
+        </div>
+        <div class="hud-center">
+          <div class="timer-display" id="timer">3:00</div>
+          <div class="match-status" id="matchStatus">Nhấn START để bắt đầu</div>
+          <div class="hud-btns">
+            <button class="btn-start" id="btnStart">▶ START</button>
+            <button class="btn-reset" id="btnReset">↺ RESET</button>
+          </div>
+        </div>
+        <div class="hud-team red-team">
+          <div class="team-label">ĐỘI ĐỎ (AI)</div>
+          <div class="score-display" id="scoreRed">100</div>
+          <div class="score-bar-wrap"><div class="score-bar red-bar" id="barRed"></div></div>
+          <div class="team-controls">Tự động</div>
+        </div>
+      </div>
+      <canvas id="arenaCanvas" width="560" height="560"></canvas>
+      <div class="sim-log" id="simLog">
+        <div class="log-title">📋 Nhật Ký Trận Đấu</div>
+        <div id="logContent"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BANNED -->
+  <section id="banned" class="section banned-section">
+    <div class="section-header">
+      <span class="section-tag">NGHIÊM CẤM</span>
+      <h2>Vũ Khí & Hành Vi Bị Cấm</h2>
+      <p class="section-desc">Các quy định nhằm đảm bảo an toàn tuyệt đối cho học sinh và mọi người xung quanh</p>
+    </div>
+    <div class="banned-grid">
+      <div class="banned-card">
+        <div class="banned-icon">🔄</div>
+        <div class="banned-x">✕</div>
+        <h3>Vũ Khí Quay Tốc Độ Cao</h3>
+        <p>Lưỡi cưa, đĩa quay, thanh quay có thể làm vỡ vật liệu và bắn mảnh văng nguy hiểm.</p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">🔨</div>
+        <div class="banned-x">✕</div>
+        <h3>Vũ Khí Sát Thương Cao</h3>
+        <p>Chùy, búa tạ, rìu và các loại vũ khí có thể gây thương tích nghiêm trọng.</p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">💧</div>
+        <div class="banned-x">✕</div>
+        <h3>Vũ Khí Chất Lỏng</h3>
+        <p>Nước, dầu nhớt, hóa chất lỏng — làm hỏng sàn đấu, linh kiện và gây nguy hiểm điện.</p>
+      </div>
+      <div class="banned-card critical-ban">
+        <div class="banned-icon">🔥</div>
+        <div class="banned-x">✕</div>
+        <h3>Cháy Nổ / Lửa</h3>
+        <p>Thuốc nổ, pháo lửa, súng phun lửa, tia lửa điện. <strong>Tuyệt đối cấm không có ngoại lệ.</strong></p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">🕸️</div>
+        <div class="banned-x">✕</div>
+        <h3>Vũ Khí Gây Vướng</h3>
+        <p>Lưới, dây cáp, dây câu bắn ra để quấn vào bánh xe hay cơ cấu robot đối phương.</p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">🧲</div>
+        <div class="banned-x">✕</div>
+        <h3>Nam Châm Công Suất Lớn</h3>
+        <p>Thiết bị nam châm dùng để hút hoặc phá linh kiện đối thủ, nhiễu hệ thống điều khiển.</p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">🎯</div>
+        <div class="banned-x">✕</div>
+        <h3>Bắn Đạn / Projectile</h3>
+        <p>Súng bắn đạn, tên, phi tiêu. Robot không được phóng vật thể rời gây nguy hiểm.</p>
+      </div>
+      <div class="banned-card">
+        <div class="banned-icon">🖐️</div>
+        <div class="banned-x">✕</div>
+        <h3>Can Thiệp Bằng Tay</h3>
+        <p>Trong thi đấu, không được chạm tay vào robot của mình hay đối phương. Vi phạm → thua cuộc.</p>
+      </div>
+    </div>
+    <div class="banned-note">
+      <div class="note-icon">⚖️</div>
+      <p>Ban Tổ Chức có quyền kiểm tra, đánh giá và <strong>loại bỏ bất kỳ robot hoặc vũ khí</strong> nào không đảm bảo an toàn trước hoặc trong khi thi đấu. Mọi quyết định của BTC và Ban Giám Khảo là <strong>quyết định cuối cùng</strong>.</p>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-logos">
+      <img src="challenge_logo.png" alt="Lê Lợi Robotics" class="footer-logo" />
+      <img src="logo_LRAS.png" alt="LRAS" class="footer-logo-lras" />
+    </div>
+    <div class="footer-text">
+      <p>Giải Đấu Robotics Trường THPT Lê Lợi — Thọ Xuân, ngày 28 tháng 03 năm 2026</p>
+      <p class="footer-motto">Sáng tạo · Kỹ thuật · Fair-play</p>
+    </div>
+  </footer>
+
+  <script src="simulation.js"></script>
+</body>
+</html>
