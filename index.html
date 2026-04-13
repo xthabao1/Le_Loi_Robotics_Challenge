@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Lê Lợi Robotics Challenge 2026</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,400;0,600;0,700;1,400&family=Lexend+Deca:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
 </head>
+
 <body>
 
   <!-- NAVBAR -->
@@ -46,7 +51,9 @@
       </div>
       <a href="#simulation" class="cta-btn">
         <span>Xem Mô Phỏng</span>
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14M12 5l7 7-7 7" />
+        </svg>
       </a>
     </div>
     <div class="scroll-indicator">
@@ -66,22 +73,26 @@
         <div class="info-card">
           <div class="info-icon">🏟️</div>
           <h3>Đấu Trường</h3>
-          <p>Sàn đấu hình vuông <strong>2.44m × 2.44m</strong> với tường bao quanh chắc chắn. Hai robot bắt đầu từ hai vị trí xuất phát (màu xanh) đối diện nhau.</p>
+          <p>Sàn đấu hình vuông <strong>2.44m × 2.44m</strong> với tường bao quanh chắc chắn. Hai robot bắt đầu từ hai
+            vị trí xuất phát (màu xanh) đối diện nhau.</p>
         </div>
         <div class="info-card danger">
           <div class="info-icon">⚠️</div>
           <h3>Bẫy Nhỏ</h3>
-          <p>Hai vùng bẫy nhỏ (màu đỏ) đặt lệch tâm. Mỗi giây robot nằm trong bẫy → <strong>mất 1 điểm</strong>. Thoát ra thì điểm không bị trừ thêm.</p>
+          <p>Hai vùng bẫy nhỏ (màu đỏ) đặt lệch tâm. Mỗi giây robot nằm trong bẫy → <strong>mất 1 điểm</strong>. Thoát
+            ra thì điểm không bị trừ thêm.</p>
         </div>
         <div class="info-card critical">
           <div class="info-icon">💥</div>
           <h3>Cửa Sập</h3>
-          <p>Hai hố cửa sập ở hai bên sàn. Robot rơi vào → <strong>thua ngay lập tức</strong>, không cần tính điểm. Đây là yếu tố nguy hiểm nhất sân đấu.</p>
+          <p>Hai hố cửa sập ở hai bên sàn. Robot rơi vào → <strong>thua ngay lập tức</strong>, không cần tính điểm. Đây
+            là yếu tố nguy hiểm nhất sân đấu.</p>
         </div>
         <div class="info-card">
           <div class="info-icon">🎯</div>
           <h3>Chiến Thuật</h3>
-          <p>Kết hợp tấn công để đẩy đối thủ vào bẫy/cửa sập, đồng thời phòng thủ tránh bị rơi vào vùng nguy hiểm. Mỗi quyết định đều mang tính sống còn.</p>
+          <p>Kết hợp tấn công để đẩy đối thủ vào bẫy/cửa sập, đồng thời phòng thủ tránh bị rơi vào vùng nguy hiểm. Mỗi
+            quyết định đều mang tính sống còn.</p>
         </div>
       </div>
       <div class="arena-map-static">
@@ -149,7 +160,8 @@
         <div class="rule-num">06</div>
         <div class="rule-content">
           <h3>Robot Mắc Kẹt</h3>
-          <p>Nếu dính nhau <strong>&gt;20 giây</strong>, trọng tài cảnh cáo. Sau 5 giây vẫn không tách → dừng trận, đặt về vị trí xuất phát.</p>
+          <p>Nếu dính nhau <strong>&gt;20 giây</strong>, trọng tài cảnh cáo. Sau 5 giây vẫn không tách → dừng trận, đặt
+            về vị trí xuất phát.</p>
         </div>
       </div>
     </div>
@@ -200,7 +212,9 @@
         <div class="hud-team blue-team">
           <div class="team-label">ĐỘI XANH</div>
           <div class="score-display" id="scoreBlue">100</div>
-          <div class="score-bar-wrap"><div class="score-bar blue-bar" id="barBlue"></div></div>
+          <div class="score-bar-wrap">
+            <div class="score-bar blue-bar" id="barBlue"></div>
+          </div>
           <div class="team-controls">WASD / ↑↓←→</div>
         </div>
         <div class="hud-center">
@@ -214,7 +228,9 @@
         <div class="hud-team red-team">
           <div class="team-label">ĐỘI ĐỎ (AI)</div>
           <div class="score-display" id="scoreRed">100</div>
-          <div class="score-bar-wrap"><div class="score-bar red-bar" id="barRed"></div></div>
+          <div class="score-bar-wrap">
+            <div class="score-bar red-bar" id="barRed"></div>
+          </div>
           <div class="team-controls">Tự động</div>
         </div>
       </div>
@@ -285,7 +301,9 @@
     </div>
     <div class="banned-note">
       <div class="note-icon">⚖️</div>
-      <p>Ban Tổ Chức có quyền kiểm tra, đánh giá và <strong>loại bỏ bất kỳ robot hoặc vũ khí</strong> nào không đảm bảo an toàn trước hoặc trong khi thi đấu. Mọi quyết định của BTC và Ban Giám Khảo là <strong>quyết định cuối cùng</strong>.</p>
+      <p>Ban Tổ Chức có quyền kiểm tra, đánh giá và <strong>loại bỏ bất kỳ robot hoặc vũ khí</strong> nào không đảm bảo
+        an toàn trước hoặc trong khi thi đấu. Mọi quyết định của BTC và Ban Giám Khảo là <strong>quyết định cuối
+          cùng</strong>.</p>
     </div>
   </section>
 
@@ -296,11 +314,12 @@
       <img src="logo_LRAS.png" alt="LRAS" class="footer-logo-lras" />
     </div>
     <div class="footer-text">
-      <p>Giải Đấu Robotics Trường THPT Lê Lợi — Thọ Xuân, ngày 28 tháng 03 năm 2026</p>
+      <p>Giải Đấu Robotics Trường THPT Lê Lợi</p>
       <p class="footer-motto">Sáng tạo · Kỹ thuật · Fair-play</p>
     </div>
   </footer>
 
   <script src="simulation.js"></script>
 </body>
+
 </html>
