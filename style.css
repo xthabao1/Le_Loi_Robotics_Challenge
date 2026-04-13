@@ -14,9 +14,9 @@
   --card-bg: rgba(10,30,60,0.85);
   --border: rgba(0,200,255,0.25);
   --danger: #ff6b35;
-  --font-head: 'Orbitron', monospace;
-  --font-body: 'Rajdhani', sans-serif;
-  --font-mono: 'Share Tech Mono', monospace;
+  --font-head: 'Lexend Deca', sans-serif;
+  --font-body: 'Be Vietnam Pro', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
 }
 
 html { scroll-behavior: smooth; }
@@ -46,7 +46,7 @@ body {
 
 .nav-logo-img {
   height: 40px;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(175deg);
+  filter: drop-shadow(0 0 6px rgba(0,200,255,0.4));
 }
 
 .nav-links {
@@ -731,7 +731,7 @@ body {
 
 .footer-logo-lras {
   height: 45px;
-  filter: brightness(0) invert(1) sepia(1) saturate(3) hue-rotate(160deg) opacity(0.8);
+  filter: drop-shadow(0 0 8px rgba(0,200,255,0.3));
 }
 
 .footer-text { text-align: center; }
