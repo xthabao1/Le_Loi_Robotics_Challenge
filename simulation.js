@@ -521,5 +521,38 @@ canvas.addEventListener('touchend', () => {
   touchStart = null;
 });
 
+// D-Pad button controls
+const dpadMap = {
+  btnUp:    'ArrowUp',
+  btnDown:  'ArrowDown',
+  btnLeft:  'ArrowLeft',
+  btnRight: 'ArrowRight',
+};
+
+for (const [id, key] of Object.entries(dpadMap)) {
+  const btn = document.getElementById(id);
+  if (!btn) continue;
+
+  btn.addEventListener('pointerdown', (e) => {
+    e.preventDefault();
+    btn.classList.add('pressed');
+    keys[key] = true;
+    btn.setPointerCapture(e.pointerId);
+  });
+
+  btn.addEventListener('pointerup', (e) => {
+    e.preventDefault();
+    btn.classList.remove('pressed');
+    keys[key] = false;
+  });
+
+  btn.addEventListener('pointercancel', (e) => {
+    btn.classList.remove('pressed');
+    keys[key] = false;
+  });
+
+  btn.addEventListener('contextmenu', (e) => e.preventDefault());
+}
+
 // Init
 resetGame();
