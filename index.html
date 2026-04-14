@@ -25,6 +25,7 @@
       <li><a href="#arena">Sân Đấu</a></li>
       <li><a href="#rules">Luật Thi</a></li>
       <li><a href="#simulation">Mô Phỏng</a></li>
+      <li><a href="#schedule">Lịch Trình</a></li>
       <li><a href="#banned">Cấm Kỵ</a></li>
     </ul>
   </nav>
@@ -235,10 +236,78 @@
         </div>
       </div>
       <canvas id="arenaCanvas" width="560" height="560"></canvas>
+
+      <!-- MOBILE D-PAD CONTROLS -->
+      <div class="mobile-dpad" id="mobileDpad">
+        <button class="dpad-btn dpad-up" id="btnUp" aria-label="Lên">▲</button>
+        <div class="dpad-row">
+          <button class="dpad-btn dpad-left" id="btnLeft" aria-label="Trái">◀</button>
+          <div class="dpad-center"></div>
+          <button class="dpad-btn dpad-right" id="btnRight" aria-label="Phải">▶</button>
+        </div>
+        <button class="dpad-btn dpad-down" id="btnDown" aria-label="Xuống">▼</button>
+      </div>
+
       <div class="sim-log" id="simLog">
         <div class="log-title">📋 Nhật Ký Trận Đấu</div>
         <div id="logContent"></div>
       </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section id="schedule" class="section schedule-section">
+    <div class="section-header">
+      <span class="section-tag">KẾ HOẠCH</span>
+      <h2>Lịch Trình Cuộc Thi</h2>
+    </div>
+    <div class="schedule-table-wrap">
+      <table class="schedule-table">
+        <thead>
+          <tr>
+            <th>Giai Đoạn</th>
+            <th>Thời Gian</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <div class="stage-icon">📝</div>
+              <div class="stage-info">
+                <span class="stage-name">Tiếp nhận đăng ký tham gia</span>
+              </div>
+            </td>
+            <td><span class="time-badge">08/04/2026 – 18/04/2026</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="stage-icon">✏️</div>
+              <div class="stage-info">
+                <span class="stage-name">Gia hạn chỉnh sửa thông tin</span>
+              </div>
+            </td>
+            <td><span class="time-badge">Đến hết ngày 20/04/2026</span></td>
+          </tr>
+          <tr>
+            <td>
+              <div class="stage-icon">🎓</div>
+              <div class="stage-info">
+                <span class="stage-name">Tập Huấn <em>(online &amp; offline)</em></span>
+              </div>
+            </td>
+            <td><span class="time-badge">21/04/2026 – 03/05/2026</span></td>
+          </tr>
+          <tr class="row-final">
+            <td>
+              <div class="stage-icon">🏆</div>
+              <div class="stage-info">
+                <span class="stage-name">Thi Đấu</span>
+              </div>
+            </td>
+            <td><span class="time-badge time-final">24/05/2026</span></td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </section>
 
